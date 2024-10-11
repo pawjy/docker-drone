@@ -1,0 +1,18 @@
+{
+  "github": {
+    "build": [
+      {"docker_build":"quay.io/wakaba/drone:server", "path":"server"}
+    ],
+    "tests": [
+      "docker run -i quay.io/wakaba/drone:server true",
+      "make test-image-server DOCKER_IMAGE=quay.io/wakaba/drone:server",
+      
+      {"docker_push":"quay.io/wakaba/drone:server"},
+      
+      "true"
+    ],
+    "merger": true,
+    "gaa": true,
+    "autobuild": true
+  }
+}
