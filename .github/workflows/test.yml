@@ -98,7 +98,7 @@
                "run" : "mkdir -p $CIRCLE_ARTIFACTS"
             },
             {
-               "run" : "docker build -t quay\u005C.io\u005C/wakaba\u005C/drone\u005C:server server"
+               "run" : "docker build --cache-from quay\u005C.io\u005C/wakaba\u005C/drone\u005C:server -t quay\u005C.io\u005C/wakaba\u005C/drone\u005C:server server"
             },
             {
                "run" : "docker run -i quay.io/wakaba/drone:server true"
